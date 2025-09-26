@@ -17,19 +17,14 @@ Example 2:
 Input: nums = [3,2,4], target = 6
 Output: [1,2]
 */
-
-#include<vector>
-
 class Solution 
 {
 public:
     vector<int> twoSum(vector<int>& nums, int target) 
     {
-        int it1_index, it2_index;
-	    it1_index=0;
-        it2_index=0; 
-	    vector<int>::iterator it1, it2, tmp;
-	    it1=nums.begin(); 
+        int it1_index, it2_index; 
+	vector<int>::iterator it1, it2, tmp;
+	it1=nums.begin(); 
         while(it1!=nums.end())
         {
             it2=it1+1;
@@ -41,20 +36,8 @@ public:
             if(*it1+*it2 == target ) break;
             it1++;
 	}
-	
-        tmp = nums.begin();
-        while(tmp!=it1)
-        {
-            it1_index++;
-            tmp++;
-        }
-        
-        tmp = nums.begin();
-        while(tmp!=it2)
-        {
-            it2_index++;
-            tmp++;
-        }
+	it1_index=it1-nums.begin();
+	it2_index=it2-nums.begin();
         vector<int> abc={it1_index,it2_index};
         return abc;
     }
