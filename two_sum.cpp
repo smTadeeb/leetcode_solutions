@@ -38,7 +38,7 @@ public:
             }
             if(*it1+*it2 == target ) break;
             it1++;
-	}
+		}
 	it1_index=it1-nums.begin();
 	it2_index=it2-nums.begin();
         vector<int> abc={it1_index,it2_index};
